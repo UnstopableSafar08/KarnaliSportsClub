@@ -1,5 +1,8 @@
+from math import ceil
 from django.http import HttpResponse
 from django.shortcuts import render
+from .models import ImageSlider
+from ksc.models import ImageSlider
 
 # Create your views here.
 def index(request):
