@@ -9,7 +9,10 @@
           .carousel-indicators .active {
           background-color: blue;
             }
-
+          .carousel-item img{ 
+          height: 550px; 
+          width:auto;
+        }
           .col-md-3 img{
           width: 250px;
           height: 350px;
@@ -35,13 +38,33 @@
 
 {% block body %}
 {% load static %}
-<div class="container">
+
+<!-- Image Slider starts from here -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'ksc/slide1.webp' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
     <h1>Events...</h1>
 <div id="demo" class="carousel slide my-3" data-ride="carousel">
     <ul class="carousel-indicators">
       <li data-target="#demo" data-slide-to="0" class="active"></li>
-
-       {% for i in range %}
+      {% for i in range %}
       <li data-target="#demo" data-slide-to="{{i}}" ></li>
       {% endfor %}
     </ul>
@@ -80,14 +103,13 @@
     </div>
 
 </div>
+  <!-- left and right controls for the slide -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+</a>
 </div>
-    <!-- left and right controls for the slide -->
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
+  
  {% endblock %}
-
-</div>
