@@ -32,6 +32,7 @@
    padding-left: 0,
    padding-right: 0;
    }
+
  {% endblock %}
 
 {% block body %}
@@ -44,13 +45,13 @@
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
   <div class="carousel-inner">
-    <div class="carousel-item active">
+    <div class="carousel-item active" style="width: auto; height: 600px;">
       <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" style="width: auto; height: 600px;">
       <img src="{% static 'ksc/slide1.webp' %}" class="d-block w-100" alt="...">
     </div>
-    <div class="carousel-item">
+    <div class="carousel-item" style="width: auto; height: 600px;">
       <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
     </div>
   </div>
@@ -59,7 +60,7 @@
 
 <!--carousel starts from here -->
 <div class="container">
-  <h1 class='my-4'>Events...</h1>
+  <h1 class='my-4 mx-3' style="font-family: 'Poppins', sans-serif !important; font-weight: bold;">Events...</h1>
 <div id="demo" class="carousel slide my-3" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
