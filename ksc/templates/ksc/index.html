@@ -1,44 +1,41 @@
 {% extends 'ksc/basic.html' %}
 {% block css %}
-          .col-md-3
-          {
-          display: inline-block;
-          margin-left:-4px;
-          }
+  .col-md-3
+  {
+  display: inline-block;
+  margin-left:-4px;
+  }
+  .carousel-indicators .active {
+  background-color: blue;
+    }
+  .col-md-3 img{
+  width:100%;
+  height:auto;
+  }
 
-          .carousel-indicators .active {
-          background-color: blue;
-            }
-          .carousel-item img{ 
-          height: 550px; 
-          width:auto;
-        }
-          .col-md-3 img{
-          width: 250px;
-          height: 350px;
-          }
+  .col-md-3 img{
+    width: 250px;
+    height: 290px;
+    }
 
-          body .carousel-indicator li{
-          background-color: blue;
-          }
-
-          body .carousel-indicators{
-          bottom: 0;
-          }
-
-          body .carousel-control-prev-icon,
-          body .carousel-control-next-icon{
-          background-color: blue;
-          }
-           body .no-padding{
-           padding-left: 0,
-           padding-right: 0;
-           }
+  body .carousel-indicator li{
+  background-color: blue;
+  }
+  body .carousel-indicators{
+  bottom: 0;
+  }
+  body .carousel-control-prev-icon,
+  body .carousel-control-next-icon{
+  background-color: blue;
+  }
+   body .no-padding{
+   padding-left: 0,
+   padding-right: 0;
+   }
  {% endblock %}
 
 {% block body %}
 {% load static %}
-
 <!-- Image Slider starts from here -->
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
@@ -58,58 +55,63 @@
     </div>
   </div>
 </div>
+<!-- Image Slider End here -->
 
-<div class="container-fluid">
-    <h1>Events...</h1>
+<!--carousel starts from here -->
+<div class="container">
+  <h1 class='my-4'>Events...</h1>
 <div id="demo" class="carousel slide my-3" data-ride="carousel">
-    <ul class="carousel-indicators">
-      <li data-target="#demo" data-slide-to="0" class="active"></li>
-      {% for i in range %}
-      <li data-target="#demo" data-slide-to="{{i}}" ></li>
-      {% endfor %}
-    </ul>
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
 
-    <!--Slideshow starts here -->
-    <div class="container carousel-inner no-padding">
+     {% for i in range %}
+    <li data-target="#demo" data-slide-to="{{i}}" ></li>
+    {% endfor %}
+  </ul>
 
-      <div class="carousel-item active">
-        <div class="col-xs-3 col-sm-3 col-md-3">
-          <div class="card" style="width: 18rem;">
-            <img src='/media/ksc/image/img1.jpg' class="card-img-top" alt="...">
-            <div class="card-body">
-                <img src='/media/{{ImageSlider.0.Image}}'>
-                <h5 class="card-title">{{ImageSlider.0.Image_name}}</h5>
-                <p class="card-text">{{ImageSlider.0.Image_Desc}}</p>
-                <a href="#" class="btn btn-primary">Read More...</a>
-            </div>
-          </div>
-       </div>
-       
-        {% for i in ImageSlider|slice:"1:"%}
-        <div class="col-xs-3 col-sm-3 col-md-3">
-          <div class="card" style="width: 18rem;">
-            <img src='/media/{{i.Image}}' class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">{{i.Image_name}}</h5>
-              <p class="card-text">{{i.Image_Desc}}</p>
-              <a href="#" class="btn btn-primary">Read More...</a>
-            </div>
+  <!--Slideshow starts here -->
+  <div class="container carousel-inner no-padding">
+
+    <div class="carousel-item active">
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src='/media/{{ImageSlider.0.Image}}'>
+          <div class="card-body">
+              <h5 class="card-title">{{ImageSlider.0.Image_Name}}</h5>
+              <p class="card-text">{{ImageSlider.0.Image_Desc}}</p>
+              <a href="#" class="btn btn-primary">Read More</a>
           </div>
         </div>
-        {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
-      </div><div class="carousel-item">
-        {% endif %}
-        {% endfor %}
-    </div>
+     </div>
 
+
+     {% for i in ImageSlider|slice:"1:"%}
+      <div class="col-xs-3 col-sm-3 col-md-3">
+        <div class="card" style="width: 18rem;">
+          <img src='/media/{{i.Image}}' class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">{{i.Image_Name}}</h5>
+            <p class="card-text">{{i.Image_Desc}}</p>
+            <a href="#" class="btn btn-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+      {% if forloop.counter|divisibleby:3 and forloop.counter > 0 and not forloop.last %}
+    </div><div class="carousel-item">
+      {% endif %}
+
+      {% endfor %}
+  </div>
+</div>
 </div>
   <!-- left and right controls for the slide -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-</a>
-<a class="carousel-control-next" href="#demo" data-slide="next">
-    <span class="carousel-control-next-icon"></span>
-</a>
+      <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+      <span class="carousel-control-next-icon"></span>
+  </a>
+
 </div>
-  
- {% endblock %}
+{% endblock %}
+
