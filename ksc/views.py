@@ -7,7 +7,7 @@ from ksc.models import ImageSlider
 
 # Create your views here.
 def index(request):
-    ImageSliders = ImageSlider.objects.all()
+    ImageSliders = ImageSlider.objects.all().order_by('-id')
     print(ImageSliders)
     n = len(ImageSliders)
     nSlides = n//4 + ceil((n/4)-(n//4))
