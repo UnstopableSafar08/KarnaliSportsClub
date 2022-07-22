@@ -22,11 +22,13 @@
   background-color: blue;
   }
   body .carousel-indicators{
-  bottom: 0;
+  bottom: -10px;
   }
   body .carousel-control-prev-icon,
   body .carousel-control-next-icon{
-  background-color: blue;
+  background-color: red;
+  width: 25px;
+  height: 35px;
   }
    body .no-padding{
    padding-left: 0,
@@ -104,28 +106,33 @@
       {% endfor %}
   </div>
 </div>
-</div>
-  <!-- left and right controls for the slide -->
+  <!-- left and right controls for the slide start -->
   <a class="carousel-control-prev" href="#demo" data-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
+    <span class="carousel-control-prev-icon"></span>
   </a>
   <a class="carousel-control-next" href="#demo" data-slide="next">
-      <span class="carousel-control-next-icon"></span>
+    <span class="carousel-control-next-icon"></span>
   </a>
+ <!-- left and right controls for the slide end -->
+</div>
 
 
+<!-- Image Gallery starts here-->
 <h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Image Gallery</h1>
 <div class="row">
     {% for res in Slider %}
     <div class="col-3">
         <a href="#"> 
-        <img src="/media/{{res.img}}" alt="" title="" style="width:100%; height:290px; box-shadow: 2px 2px 4px #000000; border-radius: 15px ;"></a>
-        <br/>
-        <b> </b>
-        <hr style=" border-top: 1px dashed red;"/>
+        <img src="/media/{{res.img}}" alt="" title="" style="width:100%; height:290px; box-shadow: 2px 2px 4px #000000; border-radius: 15px ; margin:10px; padding:2px;"></a>
+
+       <!--<h3>{{res.name}} <br/> </h3>  <hr style=" border-top: 1px dashed red;"/>-->
     </div>
     {% endfor %}
 </div>
-</div>
+<!-- Image Gallery end here-->
+
+
+
+
 {% endblock %}
 

@@ -10,7 +10,7 @@ from ksc.models import ImageSlider, Slider
 # Create your views here.
 def index(request):
     ImageSliders = ImageSlider.objects.all().order_by('-id')
-    slide = Slider.objects.all() #For slider at top of the page...
+    slide = Slider.objects.all().order_by('-id') #For slider at top of the page...
     print(ImageSliders)
     n = len(ImageSliders)
     nSlides = n//4 + ceil((n/4)-(n//4))
