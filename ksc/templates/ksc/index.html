@@ -14,10 +14,10 @@
   }
 
   .col-md-3 img{
-    width: 250px;
+    width: auto;
     height: 290px;
     }
-
+   
   body .carousel-indicator li{
   background-color: blue;
   }
@@ -34,7 +34,10 @@
    padding-left: 0,
    padding-right: 0;
    }
-
+   iframe {
+    box-shadow: 2px 2px 4px #000000; 
+    border-radius: 15px ;
+   }
  {% endblock %}
 
 {% block body %}
@@ -51,7 +54,7 @@
       <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" style="width: auto; height: 600px;">
-      <img src="{% static 'ksc/slide1.webp' %}" class="d-block w-100" alt="...">
+      <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item" style="width: auto; height: 600px;">
       <img src="{% static 'ksc/slide.webp' %}" class="d-block w-100" alt="...">
@@ -60,13 +63,26 @@
 </div>
 <!-- Image Slider End here -->
 
-<!--carousel starts from here -->
 <div class="container">
-  <h1 class='my-5 mx-3' style="font-family: 'Poppins', sans-serif !important; font-weight: bold;">Events...</h1>
+<div class="row  my-3 mx-3">
+  <div class="col">
+    <p  style="font-family: 'Poppins', sans-serif !important; "> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+  </div>
+</div>
+
+
+
+<!--carousel starts from here -->
+
+  <h1 class='my-2 mx-2' style="font-family: 'Poppins', sans-serif !important; font-weight: bold;">Events...</h1>
 <div id="demo" class="carousel slide my-3" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
-
+   
      {% for i in range %}
     <li data-target="#demo" data-slide-to="{{i}}" ></li>
     {% endfor %}
@@ -74,7 +90,6 @@
 
   <!--Slideshow starts here -->
   <div class="container carousel-inner no-padding">
-
     <div class="carousel-item active">
       <div class="col-xs-3 col-sm-3 col-md-3">
         <div class="card" style="width: 18rem;">
@@ -86,7 +101,6 @@
           </div>
         </div>
      </div>
-
 
      {% for i in ImageSlider|slice:"1:"%}
       <div class="col-xs-3 col-sm-3 col-md-3">
@@ -129,10 +143,21 @@
     </div>
     {% endfor %}
 </div>
+</div>
 <!-- Image Gallery end here-->
+<div>
+  <iframe width="100%" height="559" src="https://www.youtube.com/embed/50QCF4-XZjY" title="10K Time Trial on road in Jumla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
 
-
-
+<div class="footer" style="background-color:#343a40; color:#fff; marginF:2px;"><center>
+  <span>© Copyright 2022 Karnali Sports Club, Jumla, All rights reserved. </span><br/>
+  <span><a href="" ><i class="fa-brands fa-facebook fa-2x" style="margin:5px;"></i></a>
+  <a href="" ><i class="fa-brands fa-instagram fa-2x" style="margin:5px;"></i></a>
+  <a href="" ><i class="fa-brands fa-twitter fa-2x" style="margin:5px;"></i></a>
+  <a href="" ><i class="fa-brands fa-youtube fa-2x" style="margin:5px;"></i></a>
+  <a href="" ><i class="fa-brands fa-whatsapp fa-2x" style="margin:5px;"></i></a> </span>
+  </center>
+</div>
 
 {% endblock %}
 
