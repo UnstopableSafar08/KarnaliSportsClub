@@ -11,6 +11,9 @@
     
     line-height: 1.5;
 }
+h2 {
+    color : rgb(0, 153, 205);
+}
 {% endblock %}
 {% load static %}
 {% block body %}
@@ -26,7 +29,7 @@
 <div class="row mx-3 my-5">
     <div class="col-md-6">
 
-        <h5 style="font-weight:bold">Bank Details :: </h5>
+        <h5 style="font-weight:bold; color: rgb(0, 153, 205); font-size:25px;">Bank Details :: </h5>
             <h6>Bank Name: Shangri-la Development Bank Ltd.</h6>
             <h6>Bank Account Name: KARNALI KHELKUD CLUB</h6>
             <h6>Bank Account Number: 02800800365550000001</h6>
@@ -36,6 +39,7 @@
     <div class="col-md-6">
         <center>
         <img src="{% static 'ksc/fonepay.webp' %}" alt="KarnaliSportsClub-FonePay" style="width:365px; height:510px; border-radius: 15px; box-shadow: 2px 2px 4px #000000;" > 
+        <figcaption style="font-size:20px;"><i>Official fonepay QR - KSC</i></figcaption>
         </center>
     </div>
 </div>
