@@ -21,6 +21,9 @@ def index(request):
 def about(request):
     return render(request, 'ksc/about.html')
 
+def donate(request):
+    return render(request, 'ksc/donate.html')
+
 def contact(request):
     slide = Slider.objects.all()
     context = { 
