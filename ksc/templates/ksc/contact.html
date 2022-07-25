@@ -12,7 +12,7 @@
 h1{ font-size: 52px; } .carousel-inner .carousel-caption .button{ font-weight:
 500; font-size: 16px; letter-spacing: 1px; display: inline-block; padding: 10px
 30px; border-radius: 50px; transition: 0.5s; border: 2px solid #3489bd;
-text-decoration: none; background-color: #3489bd; color: #fff; } /* animated css
+text-decoration: none; background-col-smor: #3489bd; col-smor: #fff; } /* animated css
 */ .animate__animated.animate__zoomIn{ --animate-delay: 1.7s;
 --animate-duration: 1.2s } .animate__animated.animate__bounce{ --animate-delay:
 1s; --animate-duration: 1.5s } .animate__animated.animate__fadeInDown{
@@ -21,10 +21,7 @@ text-decoration: none; background-color: #3489bd; color: #fff; } /* animated css
 --animate-duration: 1.5s } {% endblock %} {% block body%} {% load static %}
 <!-- slider section -->
 <div
-  id="carouselExampleCaptions"
-  class="carousel slide"
-  data-bs-ride="carousel"
->
+  id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true"aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
@@ -61,7 +58,7 @@ text-decoration: none; background-color: #3489bd; color: #fff; } /* animated css
 <!-- container starts here-->
 <div class="container">
   <div class="row mx-3 my-3" style="padding:3px;">
-    <div class="col-6" style="font-family: 'Poppins', sans-serif !important; font-size: 15px;">
+    <div class="col-sm-6" style="font-family: 'Poppins', sans-serif !important; font-size: 15px;">
       <!-- Google map start here -->
       <div style="width:98%" class="row mx-2 my-2">
         <iframe width="100%" height="300px" frameborder="1px" scrolling="no" marginheight="0" marginwidth="0"
@@ -83,34 +80,34 @@ text-decoration: none; background-color: #3489bd; color: #fff; } /* animated css
       <!-- Contact Info end here -->
     </div>
     <!-- Contact Form start here -->
-    <div class="col-6" style="font-size: 20px; padding:3px;">
+    <div class="col-sm-6" style="font-size: 20px; padding:3px;">
       <form>
         <div class="form-row">
-          <div class="col">
+          <div class="col-sm">
             First Name :
             <input type="text" class="form-control" placeholder="First name" required/>
           </div>
-          <div class="col">
+          <div class="col-sm">
             Last Name :
             <input
               type="text" class="form-control" placeholder="Last name" required/>
           </div>
         </div>
         <div class="form-row">
-          <div class="col">
+          <div class="col-sm">
             Phone Number<input type="tel" class="form-control" placeholder="Enter your Phone Number" required/>
           </div>
         </div>
         <div class="form-row">
-          <div class="col">
+          <div class="col-sm">
             Email Address :
             <input type="email" class="form-control" placeholder="Enter your Email Address" required/>
           </div>
         </div>
         <div class="form-row">
-          <div class="col">
+          <div class="col-sm">
             Message :<br />
-            <textarea name="msg" id="msg" class="textarea large" aria-invalid="false" rows="3" cols="50" spellcheck="false" style="position: relative; background: none !important; line-height: normal;"></textarea>
+            <textarea name="msg" id="msg" class="textarea large" aria-invalid="false" rows="3" col-sms="50" spellcheck="false" style="position: relative; background: none !important; line-height: normal;"></textarea>
           </div>
         </div>
         <button type="button" class="btn btn-info">Submit</button>
