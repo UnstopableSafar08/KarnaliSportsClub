@@ -5,15 +5,16 @@ from django.shortcuts import render
 from .models import ImageSlider, Member
 from .models import Slider
 
-from ksc.models import ImageSlider, Slider 
+from ksc.models import ImageSlider, Slider ,ImgGall
 
 # Create your views here.
 def index(request):
     ImageSliders = ImageSlider.objects.all().order_by('-id')
+    gall = ImgGall.objects.all().order_by('-id')[0:9]
     slide = Slider.objects.all().order_by('-id') #For slider at top of the page...
     n = len(ImageSliders)
     nSlides = n//4 + ceil((n/4)-(n//4))
-    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'ImageSlider': ImageSliders, 'Slider':slide}
+    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'ImageSlider': ImageSliders, 'Slider':slide, 'ImgGall':gall}
     
     return render(request, 'ksc/index.html', params)
 

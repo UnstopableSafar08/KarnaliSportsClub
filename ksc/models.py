@@ -23,6 +23,13 @@ class Slider(models.Model):
     def __str__(self):
         return self.name
     
+class ImgGall(models.Model):
+    id=models.AutoField
+    imgName = models.CharField(max_length=50)
+    altTxt = models.CharField(max_length=50)
+    gallImg = models.ImageField(upload_to="ksc/gallery")
+    def __str__(self):
+        return self.imgName
 class Member(models.Model):
     memberId=models.AutoField
     memberName = models.CharField(max_length=50, default="")
