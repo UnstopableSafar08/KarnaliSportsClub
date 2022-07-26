@@ -6,12 +6,12 @@
         margin-top: 0; 
         margin-bottom: 0; 
         font-style: italic; 
-  
         line-height: 1;
       }
-    h2 {
-      font-family: 'Poppins', sans-serif !important; 
-      font-size: 20px;
+    h1, h2 {
+  
+      font-family: Georgia, serif;
+      font-size: 30px;  
       font-weight: bold;
       
     }
@@ -20,7 +20,7 @@
     }
     p {
       font-family: 'Poppins', sans-serif !important; 
-      font-size: 16px;
+      font-size: 18px;
       margin: 2px;
       padding: 2px;
       line-height: 1.5;
@@ -44,51 +44,55 @@
       text-align: center; 
       line-height: 1;
     }
+
     {% endblock %}
     {% block body %} 
     
     <div class="container"> <!-- container start here -->
       <center> 
-      <h2> ADVENTURE REIMAGINED </h2>
-<p>Karnali Sports Club (KSC), Jumla is a social, non-government, non-political and non-profit organization registered in District Sports Office, Jumla and operating in Jumla district. It was established on dated 2064 B.S. The aims of the Club is to develop Jumla as High Altitude training center at the same time working for the betterment of community, children through sports.<br/>
+      <h2 style="margin:15px 0px 5px 0px;"> ADVENTURE REIMAGINED </h2>
+<p>Karnali Sports Club (KSC), Jumla is a social, non-government, non-political and non-profit organization registered in District Sports Office, Jumla and operating in Jumla district. It was established on dated 2064 B.S. The aims of the Club is to develop Jumla as High Altitude training center at the same time working for the betterment of community, children through sports.<br/><br/>
 
 Karnali Sports Club is completely under supervision and guidance of Mr.Hari Rokaya; a three time Everest Marathon Winner, a Guinness book of record holder and Senior Athletic coach.<br/>
 He is also the founder president of this Club.Karnali sports club is established with the aim of motivate youth on sports and promote Jumla as a High Altitude Training Center in Nepal.<br/>
     </p>
     
-<div class="row">
-  <div class="col">
-    <p>Trained<br/>Players</p>
+<div class="row my-5">
+  <div class="col"><i class="fa-solid fa-person-running fa-2x"  style="color:rgb(0, 153, 205); margin: 0px; padding: 6px; border-radius:30px; border: 2px dotted rgb(0, 153, 205); box-shadow: 2px 2px 4px #000000;"></i><br/>
+    <p><b>Trained<br/>Players</b></p>
   </div>
-  <div class="col">
-    <p>High Altitude<br/>Training Center</p>
+  <div class="col"><i class="fa-solid fa-mountain fa-2x" style="color:rgb(0, 153, 205); margin: 0px; padding: 6px; border-radius:30px; border: 2px dotted rgb(0, 153, 205); box-shadow: 2px 2px 4px #000000;"></i><br/>
+    <p><b>High Altitude<br/>Training Center</b></p>
   </div>
-  <div class="col">
-    <p>Gold Medal &<br/>Trophy Winner</p>
+  <div class="col"><i class="fa-solid fa-medal fa-2x" style="color:rgb(0, 153, 205); margin: 0px; padding: 6px; border-radius:30px; border: 2px dotted rgb(0, 153, 205); box-shadow: 2px 2px 4px #000000;"></i><br/>
+    <p><b>Gold Medal &<br/>Trophy Winner</b></p>
   </div>
 </div>
 
-<h2 style="margin: 15px 0px 0px 0px;"> OUR MISSION </h2>
+<h2 style="margin:90px 0px 5px 0px;"> OUR MISSION <hr/></h2>
 <div class="row">
   <p>KSC mission is to be established as high altitude training hub in Nepal, promote sports and sport tourism in region. KSC does have resources to train extreme level of trainings for high altitude grounds and trainers. 
     Karnali local commuinties are very active in sports so KSC wants to make a positive impact for providing a strong ground for new players and national level players.</p>
-  <div class="col">
+  <div class="col my-3">
     <p>KSC mission is to inspire new generation about marathon and <br/> to raise awareness about sports and its needs.</p>
   </div>
-  <div class="col">
+  <div class="col my-3">
     <p>KSC wants to create awareness in thr community, not just about <br/>marathon but also about importance of tourism.</p>
   </div>
 </div>
 
 </center>
+<br/>
+<br/>
+<br/>
   <div class="row my-5" style="border: 10px solid #7d8785;  padding: 3px;"><!-- Message from start here-->
     <div class="col-sm-4">
       <img src="{% static 'ksc/saroj.webp' %}" alt="KarnaliSportsClub-FonePay" style="width:330px; height:415px; border-radius: 5px 20px 5px 20px; box-shadow: 2px 2px 4px #000000;" > 
      </div>
     <div class="col-sm-8">
-        <h4>MESSAGE FROM OUR CHAIRMAN</h4>
+      <h4>MESSAGE FROM OUR CHAIRMAN</h4>
         <h1>MR. SORAJ SHAHI</h1>
-        Chairman Karnali Sports Club<br/><br/><br/>
+        Chairman Karnali Sports Club<br/><br/>
         <p>The Karnali Sports Club has always placed a particular emphasis on ensuring sport is progressive and attracts athletes from every corner of our country. From every age group and from all social backgrounds this is a fundamental principle of the local sports partnerships which aim to remove any barrier that prevents training, development and participation in sport. The club provides free trainings and or organize different social campaigns and events to ensure local sports partnerships to key agencies in providing opportunities for more people to become involved in sport and social activities.
         <br/>
         <br/>
@@ -99,8 +103,7 @@ He is also the founder president of this Club.Karnali sports club is established
   <div class="row" style="border: 10px solid #7d8785; padding: 3px;">
     <div class="col-sm-8">
       <h4>MESSAGE FROM ROKAYA FAMILY</h4>
-     <h1>HELLO FROM THE TOP OF THE WORLD</h1><br/><br/>
-        <br/>
+     <h1>HELLO FROM THE TOP OF THE WORLD</h1><br/>
      <p>I welcome you all to join Karnali Sports Club for training in high altitude sports.<br/><br/>
         
         I thank each and every community member, organization who has shown constant support and encouragement so far. Looking forward to uniting with each and every one of you for the SPORTS.
@@ -112,7 +115,7 @@ He is also the founder president of this Club.Karnali sports club is established
   </div><!-- Message from end here-->
 
 <!-- Members list start from here-->
-<h2 style="margin:90px 0px 0px 0px;"><center>MEET & GREET OUR TEAM</center></h2><hr style=" border-top: 1px dashed red;"/>
+<h2 style="margin:90px 0px 5px 0px;"><center>MEET & GREET OUR TEAM</center></h2><hr style=" border-top: 1px dashed red;"/>
 
 <!-- Members list starts here-->
 <h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " ></h1>
@@ -138,7 +141,7 @@ He is also the founder president of this Club.Karnali sports club is established
 <!-- Members list starts here-->
 
 <div class="row my-4" ><!--Donation div end -->
-  <div class="col-sm-6" style="margin-top: 0; margin-bottom: 0; font-style: italic; text-align: center; line-height: 1;">
+  <div class="col-sm-6" style="margin-top: 0; margin-bottom: 0; ">
     <h1 style="font-size: 50px; margin: 45px 0px 0px 0px;"> Make a Donation </h1>
     <span style="font-size: 30px;"> 100% Donations fund Marathon Purpose </span>
   </div>
