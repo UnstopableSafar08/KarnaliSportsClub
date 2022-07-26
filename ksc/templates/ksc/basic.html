@@ -1,4 +1,4 @@
-
+{% load static %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,7 +9,6 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- animate css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     
@@ -17,6 +16,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
+
+    <!-- LightBox css -->
+    <link href="{% static 'lightbox2-dev/dist/css/lightbox.min.css' %}" rel="stylesheet" />
 
     <title>{% block title%} {% endblock %}</title>
      <style>
@@ -36,12 +38,13 @@
                font-size: 24px;
                border-radius: 5px;
                box-sizing: border-box;
+               padding: 2px;
            }
+        
        {% block css %} {% endblock %}
   </style>
   </head>
   <body>
-    {% load static %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <a href="/ksc/" ><img src="{% static 'ksc/logo.webp' %}" alt='logo'></a>
       <a class="navbar-brand" href="/ksc/" style='font-size:23px;'>Karnali Sports Club</a>
@@ -52,19 +55,19 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto" style='font-size:21px;'>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/' %} active {% endif %}" href="/ksc/" >Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link {% if request.path == '/ksc/' %} active {% endif %}" href="/ksc/"  onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="/ksc/blog/">Blog</a>
+        <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="#" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/about/' %} active {% endif %}" href="/ksc/about/">About us</a>
+        <a class="nav-link {% if request.path == '/ksc/about/' %} active {% endif %}" href="/ksc/about/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/contact/' %} active {% endif %}" href="/ksc/contact/">Contact</a>
+        <a class="nav-link {% if request.path == '/ksc/contact/' %} active {% endif %}" href="/ksc/contact/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Contact</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/donate/' %} active {% endif %}" href="/ksc/donate/">Donate</a>
+        <a class="nav-link {% if request.path == '/ksc/donate/' %} active {% endif %}" href="/ksc/donate/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Donate</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
@@ -76,11 +79,16 @@
   {% block body %} {% endblock %}
 
     <!-- Optional JavaScript -->
+    <!-- LightBox Gallery JS-->
+    <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'lightbox2-dev/dist/js/lightbox.min.js' %}"></script>
+    
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-    
+ 
+
     <!-- Footer start from here -->
     <br/>
     <footer class="footer" style="background-color:#343a40; color:#fff; marginF:2px; padding:10px;">
