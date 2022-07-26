@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -24,7 +25,18 @@
        }
        .footer a{
           color :rgb(0, 153, 205);
-       }       
+       }   
+       
+       .navbar-dark .navbar-nav .active>.nav-link, 
+       .navbar-dark .navbar-nav .nav-link.active, 
+       .navbar-dark .navbar-nav .nav-link.show, 
+       .navbar-dark .navbar-nav .show>.nav-link{
+               color: yellow;
+               background-color: green;
+               font-size: 24px;
+               border-radius: 5px;
+               box-sizing: border-box;
+           }
        {% block css %} {% endblock %}
   </style>
   </head>
@@ -39,22 +51,25 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto" style='font-size:21px;'>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/ksc/' %} active {% endif %}" href="/ksc/" >Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="/ksc/blog/">Blog</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About us</a>
+        <a class="nav-link {% if request.path == '/ksc/about/' %} active {% endif %}" href="/ksc/about/">About us</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link {% if request.path == '/ksc/contact/' %} active {% endif %}" href="/ksc/contact/">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if request.path == '/ksc/donate/' %} active {% endif %}" href="/ksc/donate/">Donate</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" disabled>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Search</button>
     </form>
   </div>
 </nav>
