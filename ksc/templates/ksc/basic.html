@@ -40,6 +40,15 @@
                box-sizing: border-box;
                padding: 2px;
            }
+           .zoom {
+
+            transition: transform .2s; /* Animation */
+            margin: 0 auto;
+          }
+          
+          .zoom:hover {
+            transform: scale(1.1); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+          }
         
        {% block css %} {% endblock %}
   </style>
@@ -94,10 +103,10 @@
     <footer class="footer" style="background-color:#343a40; color:#fff; marginF:2px; padding:10px;">
       <center>
       <span>© Copyright 2022 <a href="#"><b><i>Karnali Sports Club, Jumla</b></i></a>, All rights reserved. </span><br/>
-      <span><a href="https://www.facebook.com/KarnaliAdventureSports" ><i class="fa-brands fa-facebook fa-2x" style="margin:5px;"></i></a>
-      <a href="" ><i class="fa-brands fa-twitter fa-2x" style="margin:5px;"></i></a>
-      <a href="https://www.youtube.com/channel/UC6v9RkXnv0I-ckHwWrQrIqw" ><i class="fa-brands fa-youtube fa-2x" style="margin:5px;"></i></a>
-      <a href="" ><i class="fa-brands fa-whatsapp fa-2x" style="margin:5px;"></i></a> </span>
+      <span><a href="https://www.facebook.com/KarnaliAdventureSports" ><i class="fa-brands fa-facebook fa-2x zoom" style="margin:5px;"></i></a>
+      <a href="" ><i class="fa-brands fa-twitter fa-2x zoom" style="margin:5px;"></i></a>
+      <a href="https://www.youtube.com/channel/UC6v9RkXnv0I-ckHwWrQrIqw" ><i class="fa-brands fa-youtube fa-2x zoom" style="margin:5px;"></i></a>
+      <a href="" ><i class="fa-brands fa-whatsapp fa-2x zoom" style="margin:5px;"></i></a> </span>
       </center>
     </footer>
       <!-- Footer start end here --> 

@@ -1,3 +1,4 @@
+from email import message
 from email.policy import default
 from pyexpat import model
 from sqlite3 import Timestamp
@@ -8,7 +9,7 @@ class ImageSlider(models.Model):
     Image_id = models.AutoField
     Image_Name = models.CharField(max_length=80)
     Image_Desc = models.CharField(max_length=800)
-    ImagePub_date= models.DateField()
+    ImagePub_date= models.DateField(auto_now_add=True)
     Image = models.ImageField(upload_to="ksc/images", default="")
     
     def __str__(self):
@@ -37,5 +38,16 @@ class Member(models.Model):
     memberImg = models.ImageField(upload_to="ksc/images", default="")
     
     def __str__(self):
-        return self.memberName
+        return self.memberName + '   < - - - >   ' + self.memberPosition
+
+class Contact(models.Model):
+    msgId = models.AutoField
+    first_name = models.CharField(max_length=30)
+    last_name = models.CharField(max_length=30)
+    phone = models.CharField(max_length=10)
+    email = models.CharField(max_length=30)
+    message = models.TextField(max_length=300)
+    
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name
     

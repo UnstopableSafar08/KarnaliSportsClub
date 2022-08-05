@@ -1,5 +1,7 @@
 {% extends 'ksc/basic.html' %}
 {% block css %}
+
+
   .col-md-3
   {
   display: inline-block;
@@ -132,9 +134,9 @@
 
 <!-- Image Gallery starts here-->
 <h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Image Gallery</h1>
-<div class="row" style="border: 1px solid #6c757d; border-radius: 5px ;">
+<div class="row " style="border: 1px solid #6c757d; border-radius: 5px ;">
     {% for res in ImgGall %}
-    <div class="col-sm-3">
+    <div class="zoom col-sm-3">
         <a href="{{res.gallImg.url}}" data-lightbox="gallery"> 
         <img src="{{res.gallImg.url}}" alt="" title="" style="width:100%; height:290px; border : 1px solid rgb(0, 153, 205); border-radius: 5px ; margin:5px; padding:2px;"></a>
 
