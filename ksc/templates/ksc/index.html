@@ -96,8 +96,8 @@
         <div class="card" style="width: 18rem;">
           <img src='/media/{{ImageSlider.0.Image}}'>
           <div class="card-body">
-              <h5 class="card-title">{{ImageSlider.0.Image_Name}}</h5>
-              <p class="card-text">{{ImageSlider.0.Image_Desc}}</p>
+              <h5 class="card-title">{{ImageSlider.0.Image_Name|slice:"0:15"}}...</h5>
+              <p class="card-text">{{ImageSlider.0.Image_Desc|slice:"0:25"}}...</p>
               <a href="#" class="btn btn-primary">Read More</a>
           </div>
         </div>
@@ -108,8 +108,8 @@
         <div class="card" style="width: 18rem;">
           <img src='/media/{{i.Image}}' class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{i.Image_Name}}</h5>
-            <p class="card-text">{{i.Image_Desc}}</p>
+            <h5 class="card-title">{{i.Image_Name|slice:"0:25"}}...</h5>
+            <p class="card-text">{{i.Image_Desc|slice:"0:35"}}...</p>
             <a href="#" class="btn btn-primary">Read More</a>
           </div>
         </div>

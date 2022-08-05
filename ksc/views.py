@@ -34,3 +34,10 @@ def contact(request):
                'Slider':slide
                }
     return render(request, 'ksc/contact.html', context)
+
+def blog(request):
+    post = ImageSlider.objects.all().order_by('-id')
+    context = { 
+               'ImageSlider':post
+               }
+    return render(request, 'ksc/blog.html', context)

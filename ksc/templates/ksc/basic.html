@@ -50,9 +50,10 @@
             transform: scale(1.1); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
           }
           .btn {
-            background-color: #ddd;
+            background-color: orange;
             border: none;
-            color: black;
+            color: white;
+            font-weight: bold;
             padding: 16px 32px;
             text-align: center;
             font-size: 16px;
@@ -81,7 +82,7 @@
         <a class="nav-link {% if request.path == '/ksc/' %} active {% endif %}" href="/ksc/"  onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="#" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Blog</a>
+        <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="/ksc/blog/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Blog</a>
       </li>
       <li class="nav-item">
         <a class="nav-link {% if request.path == '/ksc/about/' %} active {% endif %}" href="/ksc/about/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">About us</a>
