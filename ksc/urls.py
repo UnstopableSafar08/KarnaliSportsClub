@@ -8,5 +8,6 @@ urlpatterns = [
     path('contact/', views.contact, name='About us'),
     path('donate/', views.donate, name='Donate'),
     path('blog/', views.blog, name='KSC-Blog'),
+    path('postview/<int:id>', views.postview, name='KSC-Posts'),
  
 ]
