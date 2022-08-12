@@ -1,0 +1,23 @@
+{% extends 'ksc/basic.html' %}
+{% block title %} Blog Post View {% endblock %}
+
+{% block css %} 
+
+<style>
+
+</style>
+{% endblock %}
+{% block body %}
+{% load static %}
+<div class="container">
+<div class="row justify-content-md-center my-3"> 
+        <img src="/media/{{post.thumbnail}}" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+    <div class="my-3">
+        <h4> {{post.title}}</h4>
+        <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}} | {{post.datetime}}</strong>
+        <h6> {{post.content}}</h6>
+    </div>
+</div>
+</div> <!-- container closed -->
+
+{% endblock %}

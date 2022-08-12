@@ -48,3 +48,5 @@ def postview(request, id):
     return render(request, 'ksc/postview.html', {'post':post}) 
 
     
+def event(request):
+    return render(request, 'ksc/event.html')
