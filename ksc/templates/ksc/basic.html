@@ -85,6 +85,9 @@
         <a class="nav-link {% if request.path == '/ksc/blog/' %} active {% endif %}" href="/ksc/blog/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Blog</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link {% if request.path == '/ksc/event/' %} active {% endif %}" href="/ksc/event/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Events</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link {% if request.path == '/ksc/about/' %} active {% endif %}" href="/ksc/about/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">About us</a>
       </li>
       <li class="nav-item">
@@ -93,15 +96,12 @@
       <li class="nav-item">
         <a class="nav-link {% if request.path == '/ksc/donate/' %} active {% endif %}" href="/ksc/donate/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Donate</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link {% if request.path == '/ksc/event/' %} active {% endif %}" href="/ksc/event/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Events</a>
-      </li>
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" disabled>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Search</button>
     </form>
-    <a href="/admin" role="button" class="btn-primary">Admin</a>
+    <a href="/admin" role="button" target="_blank" class="btn-primary">Admin</a>
   </div>
 </nav>
   {% block body %} {% endblock %}

@@ -75,3 +75,21 @@ class Testimonial(models.Model):
         return self.name + " - - - - - - " + self.title
     
     
+class eventPost(models.Model):
+    eventId = models.AutoField(primary_key=True)
+    eventName = models.CharField(max_length=80, default="Enter Event Name here")
+    eventCategory = models.CharField(max_length=50, default="Enter Event Category here")
+    eventH1 = models.CharField(max_length=80, default="Enter Event Heading1 here")
+    eventDesc1 = models.TextField(max_length=2000, default="Enter Event Description here")
+    eventH2 = models.CharField(max_length=80, default="")
+    eventDesc2 = models.TextField(max_length=2000, default="")
+    eventH3 = models.CharField(max_length=80, default="")
+    eventDesc3 = models.TextField(max_length=2000, default="")
+    eventDateFrom = models.DateField(default="")
+    eventDateTo = models.DateField(default="")
+    eventImg1 = models.ImageField(upload_to="ksc/eventImages", default="")
+    eventImg2 = models.ImageField(upload_to="ksc/eventImages", default="")
+    eventImg3 = models.ImageField(upload_to="ksc/eventImages", default="")
+     
+    def __str__(self):
+        return self.eventName

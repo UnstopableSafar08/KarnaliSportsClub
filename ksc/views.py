@@ -2,7 +2,7 @@ from math import ceil
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import ImageSlider, Member, Post, Testimonial
+from .models import ImageSlider, Member, Post, Testimonial, eventPost
 from .models import Slider
 
 from ksc.models import ImageSlider, Slider ,ImgGall
@@ -49,4 +49,12 @@ def postview(request, id):
 
     
 def event(request):
-    return render(request, 'ksc/event.html')
+    evpost = eventPost.objects.all()
+    context={
+        'evpost':evpost
+    }
+    return render(request, 'ksc/event.html', context)
+
+def eventview(request, id):
+    post=eventPost.objects.filter(eventId=id)[0]
+    return render(request, 'ksc/eventview.html', {'post':post}) 

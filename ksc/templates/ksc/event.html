@@ -1,3 +1,4 @@
+
 {% extends 'ksc/basic.html' %}
 {% block title %} KSC - Blog {% endblock%} 
 {% load static %}
@@ -12,40 +13,22 @@
 {% endblock %}
 {% block body %}
 <div class="container"><!-- container Div start here -->
-<!-- Image Gallery starts here-->
-<h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Blog Posts</h1>
-<div class="row ml-auto" style=" border-radius: 5px ;">
-    {% for res in ImageSlider %}
-    <div class=" zoom my-3 col-sm-6 d-flex flex-column align-items-end">
-        <a href="{{res.Image.url}}" data-lightbox="gallery"> 
-        <img src="{{res.Image.url}}" alt="" title="" style="width:300px; height:230px; border : 1px solid rgb(0, 153, 205); border-radius: 5px ; margin:5px; padding:2px;"></a>
-       <!--<h3>{{res.name}} <br/> </h3>  <hr style=" border-top: 1px dashed red;"/>--><hr/>
-    </div>
-    <div class="my-3 col-sm-6">
-        <h3>{{res.Image_Name}} </h3>
-        <p>{{res.Image_Desc}} </p>
-        <a href=""><button type="submit" class="btn" >Read More... </button></a>
-    </div>
-    {% endfor %}
-</div>
-</div>
-<!-- Image Gallery end here-->
 
 <div class="container">
-   {% for post in Post %}
+   {% for post in evpost %}
    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
        <div class="col p-4 d-flex flex-column position-static">
-           <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}}</strong>
-           <h3 class="mb-0">{{post.title}}</h3>
-           <div class="mb-1 text-muted">{{post.datetime}}</div>
-           <p class="card-text mb-auto">{{post.content| truncatechars:500}}</p>
+           <strong class="d-inline-block mb-2 text-primary">{{post.eventCategory}}</strong>
+           <h3 class="mb-0">{{post.eventName}}</h3>
+           <div class="mb-1 text-muted">{{post.eventDateFrom}} - {{post.eventDateTo}}</div>
+           <p class="card-text mb-auto">{{post.eventDesc1| truncatechars:500}}</p>
            <div class="my-2">
-              <a href="/ksc/postview/{{post.sno}}" role="button" class="btn btn-primary">Continue reading</a>
+              <a href="/ksc/eventview/{{post.eventId}}" role="button" class="btn btn-primary">Continue reading</a>
            </div>
            
        </div>
        <div class="col-auto d-none d-lg-block">
-          <a href="{{post.thumbnail.url}}" target="_blank"> <img src="/media/{{post.thumbnail}}" class="bd-placeholder-img" width="250" height="340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label=">
+          <a href="{{post.eventImg1.url}}" target="_blank"> <img src="/media/{{post.eventImg1}}" class="bd-placeholder-img" width="250" height="340" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label=">
                <rect width="100%" height="100%" fill="#55595c"></rect></a>
            
        </div>

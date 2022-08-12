@@ -11,12 +11,25 @@
 {% load static %}
 <div class="container">
 <div class="row justify-content-md-center my-3"> 
-        <img src="/media/{{post.thumbnail}}" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        <img src="/media/{{post.eventImg1}}" class="zoom" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
     <div class="my-3">
-        <h4> {{post.title}}</h4>
-        <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}} | {{post.datetime}}</strong>
-        <h6> {{post.content}}</h6>
+        <h3> {{post.eventName}}</h3>
+        <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.eventCategory}}, </i></b></span> {{post.eventDateFrom}} - {{post.eventDateTo}}</strong>
+        <h4> {{post.eventH1}}</h4>
+        <h6> {{post.eventDesc1}}</h6><br/>
+        <h4> {{post.eventH2}}</h4>
+        <h6> {{post.eventDesc2}}</h6><br/>
+        <h4> {{post.eventH3}}</h4>
+        <h6> {{post.eventDesc3}}</h6><br/>
     </div>
+    <div class= "row justify-content-center">
+        <div class="col-sm-6 zoom">
+            <img src="/media/{{post.eventImg2}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        </div>
+        <div class="col-sm-6 zoom">
+            <img src="/media/{{post.eventImg3}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        </div>
+</div>
 </div>
 </div> <!-- container closed -->
 
