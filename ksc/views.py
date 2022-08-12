@@ -2,7 +2,7 @@ from math import ceil
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import ImageSlider, Member, Post
+from .models import ImageSlider, Member, Post, Testimonial
 from .models import Slider
 
 from ksc.models import ImageSlider, Slider ,ImgGall
@@ -12,9 +12,10 @@ def index(request):
     ImageSliders = ImageSlider.objects.all().order_by('-id')
     gall = ImgGall.objects.all().order_by('-id')[0:9]
     slide = Slider.objects.all().order_by('-id') #For slider at top of the page...
+    testm = Testimonial.objects.all()
     n = len(ImageSliders)
     nSlides = n//4 + ceil((n/4)-(n//4))
-    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'ImageSlider': ImageSliders, 'Slider':slide, 'ImgGall':gall}
+    params = {'no_of_slides':nSlides, 'range': range(1,nSlides),'ImageSlider': ImageSliders, 'Slider':slide, 'ImgGall':gall, 'testm':testm}
     
     return render(request, 'ksc/index.html', params)
 

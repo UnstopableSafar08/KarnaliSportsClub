@@ -64,3 +64,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title + " by " + self.author
     
+class Testimonial(models.Model): 
+    testId=models.AutoField
+    name = models.CharField(max_length=80, default="Enter Person Name here")
+    title = models.CharField(max_length=80, default="Enter Person's Postion/working Area")
+    desc = models.CharField(max_length=1000, default="Enter desc of person")
+    img = models.ImageField(upload_to= "ksc/testimonialsImage", default="")
+    
+    def __str__(self):
+        return self.name + " - - - - - - " + self.title
