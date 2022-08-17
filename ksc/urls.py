@@ -9,7 +9,7 @@ urlpatterns = [
     path('donate/', views.donate, name='Donate'),
     
     path('blog/', views.blog, name='KSC-Blog'),
-    path('postview/<int:id>', views.postview, name='KSC-Posts'),
+    path('postview/<str:slug>', views.postview, name='KSC-Posts'),
     
     path('event/', views.event, name='KSC-event'),
     path('eventview/<int:id>', views.eventview, name='KSC-Event Post'),

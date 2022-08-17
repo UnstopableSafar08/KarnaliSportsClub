@@ -43,8 +43,8 @@ def blog(request):
                }
     return render(request, 'ksc/blog.html', context)
 
-def postview(request, id):
-    post=blogPost.objects.filter(sno=id)[0]
+def postview(request, slug):
+    post=blogPost.objects.filter(slug=slug)[0]
     return render(request, 'ksc/postview.html', {'post':post}) 
 
     
