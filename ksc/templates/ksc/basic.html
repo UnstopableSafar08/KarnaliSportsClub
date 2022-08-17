@@ -38,7 +38,7 @@
                font-size: 24px;
                border-radius: 5px;
                box-sizing: border-box;
-               padding: 2px;
+               padding: 5px;
            }
            .zoom {
 
@@ -64,6 +64,17 @@
           .btn:hover {
             background-color: #3e8e41;
             color: white;
+          }
+
+          .adminLink:hover{
+            background-color: #3e8e41;
+            color: white;
+            transition: 0.7s;
+            transform: scale(1.1);
+            border-radius:0px;
+            border: none;
+            border-bottom: 1px solid orange;
+            
           }
        {% block css %} {% endblock %}
   </style>
@@ -97,11 +108,11 @@
         <a class="nav-link {% if request.path == '/ksc/donate/' %} active {% endif %}" href="/ksc/donate/" onMouseOver="this.style.color='rgb(136 184 64)'" onMouseOut="this.style.color='white'">Donate</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" disabled>
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit" disabled>Search</button>
+    <form class="form-inline  my-lg-0">
+      <input class="form-control mr-sm-2" my-2  type="search" placeholder="Search" aria-label="Search" disabled style="margin-left: 25px; width:120px; border-radius: 20px;">
+     <!-- <button class="btn btn-outline-success my-sm-0" type="submit" disabled style="width:100px; height: 55px;">Search</button> -->
     </form>
-    <a href="/admin" role="button" target="_blank" class="btn-primary">Admin</a>
+    <a class="adminLink" href="/admin" role="button" target="_blank" class="btn-primary" style="border-radius: 20px; width:70px; height: 29px; text-align: center;">Admin</a>
   </div>
 </nav>
   {% block body %} {% endblock %}

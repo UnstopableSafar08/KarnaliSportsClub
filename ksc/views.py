@@ -2,7 +2,7 @@ from math import ceil
 from multiprocessing import context
 from django.http import HttpResponse
 from django.shortcuts import render
-from .models import ImageSlider, Member, Post, Testimonial, eventPost
+from .models import ImageSlider, Member, blogPost, Testimonial, eventPost
 from .models import Slider
 
 from ksc.models import ImageSlider, Slider ,ImgGall
@@ -37,14 +37,14 @@ def contact(request):
     return render(request, 'ksc/contact.html', context)
 
 def blog(request):
-    allPosts = Post.objects.all()
+    allPosts = blogPost.objects.all()
     context = { 
                'Post':allPosts
                }
     return render(request, 'ksc/blog.html', context)
 
 def postview(request, id):
-    post=Post.objects.filter(sno=id)[0]
+    post=blogPost.objects.filter(sno=id)[0]
     return render(request, 'ksc/postview.html', {'post':post}) 
 
     

@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import ImageSlider, Post, Testimonial, eventPost
+from .models import ImageSlider, blogPost, Testimonial, eventPost
 from .models import Slider
 from .models import Member
 from .models import ImgGall
@@ -14,7 +14,7 @@ admin.site.register(Slider)
 admin.site.register(Member)
 admin.site.register(ImgGall)
 admin.site.register(Contact)
-admin.site.register(Post)
+admin.site.register(blogPost)
 admin.site.register(Testimonial)
 admin.site.register(eventPost)
 
