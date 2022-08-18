@@ -52,29 +52,28 @@ class Contact(models.Model):
     def __str__(self):
         return self.first_name + ' ' + self.last_name
     
+#class for blogPosts 
 class blogPost(models.Model):
     sno=models.AutoField(primary_key=True)
-    title=models.CharField(max_length=255)
-    author=models.CharField(max_length=14)
+    author=models.CharField(max_length=50, default="KSC")
     slug=models.CharField(max_length=130, null=False, unique= True)
     timeStamp=models.DateTimeField(blank=True)
-    content=models.TextField()
-    thumbnail = models.ImageField(upload_to="ksc/postImage", default="" )
+    
+    blogPostH1 = models.CharField(max_length=150, default="Enter Blog Title Here")
+    blogPostDesc1 = models.TextField(max_length=2000, default="Enter Blog Content Here")
+    blogPostH2 = models.CharField(max_length=150, default="")
+    blogPostDesc2 = models.TextField(max_length=2000, default="")
+    blogPostH3 = models.CharField(max_length=150, default="")
+    blogPostDesc3 = models.TextField(max_length=2000, default="")
+    blogPostImg1 = models.ImageField(upload_to="ksc/blogImage", default="")
+    blogPostImg2 = models.ImageField(upload_to="ksc/blogImage", default="")
+    blogPostImg3 = models.ImageField(upload_to="ksc/blogImage", default="")
+    thumbnail = models.ImageField(upload_to="ksc/blogImage", default="" )
 
     def __str__(self):
-        return self.title + " by " + self.author
-    
-class Testimonial(models.Model): 
-    testId=models.AutoField
-    name = models.CharField(max_length=80, default="Enter Person Name here")
-    title = models.CharField(max_length=80, default="Enter Person's Postion/working Area")
-    desc = models.CharField(max_length=1000, default="Enter desc of person")
-    img = models.ImageField(upload_to= "ksc/testimonialsImage", default="")
-    
-    def __str__(self):
-        return self.name + " - - - - - - " + self.title
-    
-    
+        return self.blogPostH1 + " by " + self.author
+       
+#class Event Post 
 class eventPost(models.Model):
     eventId = models.AutoField(primary_key=True)
     eventName = models.CharField(max_length=80, default="Enter Event Name here")
@@ -94,3 +93,14 @@ class eventPost(models.Model):
      
     def __str__(self):
         return self.eventName
+
+#class Testinomials 
+class Testimonial(models.Model): 
+    testId=models.AutoField
+    name = models.CharField(max_length=80, default="Enter Person Name here")
+    title = models.CharField(max_length=80, default="Enter Person's Postion/working Area")
+    desc = models.CharField(max_length=1000, default="Enter desc of person")
+    img = models.ImageField(upload_to= "ksc/testimonialsImage", default="")
+    
+    def __str__(self):
+        return self.name + " - - - - - - " + self.title

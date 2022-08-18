@@ -1,5 +1,5 @@
 {% extends 'ksc/basic.html' %}
-{% block title %} Blog Post View {% endblock %}
+{% block title %} KSC - BlogPost View {% endblock %}
 
 {% block css %} 
 
@@ -11,12 +11,25 @@
 {% load static %}
 <div class="container">
 <div class="row justify-content-md-center my-3"> 
-        <img src="/media/{{post.thumbnail}}" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        <img src="/media/{{post.blogPostImg1}}" class="zoom" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
     <div class="my-3">
-        <h4> {{post.title}}</h4>
-        <strong class="d-inline-block mb-2 text-primary">Article  by {{post.author}} | {{post.datetime}}</strong>
-        <h6> {{post.content}}</h6>
+        <h3> {{post.blogPostName}}</h3>
+        <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.author}}, </i></b></span> {{post.timeStamp}} - {{post.timeStamp}}</strong>
+        <h4> {{post.blogPostH1}}</h4>
+        <h6> {{post.blogPostDesc1}}</h6><br/>
+        <h4> {{post.blogPostH2}}</h4>
+        <h6> {{post.blogPostDesc2}}</h6><br/>
+        <h4> {{post.blogPostH3}}</h4>
+        <h6> {{post.blogPostDesc3}}</h6><br/>
     </div>
+    <div class= "row justify-content-center">
+        <div class="col-sm-6 zoom">
+            <img src="/media/{{post.blogPostImg2}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        </div>
+        <div class="col-sm-6 zoom">
+            <img src="/media/{{post.blogPostImg3}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
+        </div>
+</div>
 </div>
 </div> <!-- container closed -->
 
