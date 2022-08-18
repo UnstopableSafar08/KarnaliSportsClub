@@ -19,8 +19,13 @@ from .import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+admin.site.site_header  =  "Admin | KSC"  
+admin.site.site_title  =  "Welcome to KSC Admin"
+admin.site.index_title  =  "KSC - Admin"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('ksc/', include('ksc.urls')), 
     path('blog/', include('ksc.urls')), 
+    path('', include('ksc.urls')), 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
