@@ -12,6 +12,6 @@ urlpatterns = [
     path('postview/<str:slug>', views.postview, name='KSC-Posts'),
     
     path('event/', views.event, name='KSC-event'),
-    path('eventview/<int:id>', views.eventview, name='KSC-Event Post'),
+    path('eventview/<str:slug>', views.eventview, name='KSC-Event Post'),
  
 ]

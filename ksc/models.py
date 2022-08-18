@@ -78,6 +78,7 @@ class Testimonial(models.Model):
 class eventPost(models.Model):
     eventId = models.AutoField(primary_key=True)
     eventName = models.CharField(max_length=80, default="Enter Event Name here")
+    slug=models.CharField(max_length=130, null=False, unique=True)
     eventCategory = models.CharField(max_length=50, default="Enter Event Category here")
     eventH1 = models.CharField(max_length=80, default="Enter Event Heading1 here")
     eventDesc1 = models.TextField(max_length=2000, default="Enter Event Description here")

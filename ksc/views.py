@@ -55,6 +55,6 @@ def event(request):
     }
     return render(request, 'ksc/event.html', context)
 
-def eventview(request, id):
-    post=eventPost.objects.filter(eventId=id)[0]
+def eventview(request, slug):
+    post=eventPost.objects.filter(slug=slug)[0]
     return render(request, 'ksc/eventview.html', {'post':post}) 
