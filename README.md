@@ -2,6 +2,7 @@
 # KarnaliSportsClub
 -------------------------------------------------------------------------------------------------------------------------
 Install miniconda first  < -- (already included latest version of Python on it) -- >
+
 Link : https://docs.conda.io/en/latest/miniconda.html
 -------------------------------------------------------------------------------------------------------------------------
 on Project/Application folder path run following Commands on PowerShell/CMD as administrator.
