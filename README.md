@@ -1,5 +1,4 @@
 # KarnaliSportsClub
-# KarnaliSportsClub
 -------------------------------------------------------------------------------------------------------------------------
 Install miniconda first  < -- (already included latest version of Python on it) -- >
 
