@@ -12,12 +12,16 @@
       color : rgb(0, 153, 205);
      font-weight : bold;
    }
+   .bd-placeholder-img{
+      width:250px;
+      height:244px;
+   }
 </style>
 {% endblock %}
 {% block body %}
 <div class="container"><!-- container Div start here -->
 <!-- Image Gallery starts here-->
-<h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Blog Posts</h1>
+{% comment %} <h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Blog Posts</h1> {% endcomment %}
 <div class="row ml-auto" style=" border-radius: 5px ;">
     {% for res in ImageSlider %}
     <div class=" zoom my-3 col-sm-6 d-flex flex-column align-items-end">
@@ -40,9 +44,9 @@
    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 my-4 position-relative">
        <div class="col p-4 d-flex flex-column position-static">
            <strong class="d-inline-block mb-2 text-primary text-muted"><i>Article  by {{post.author}}</i></strong>
-           <h3 class="mb-0">{{post.blogPostH1}}</h3>
+           <h3 class="mb-0">{{post.blogPostName}}</h3>
            <div class="mb-1 text-muted">{{post.datetime}}</div>
-           <p class="card-text mb-auto">{{post.blogPostDesc1| truncatechars:300}}</p>
+           <p class="card-text mb-auto">{{post.blog_post_desc| truncatechars:350}}</p>
            <div class="my-2">
               <a href="/ksc/postview/{{post.slug}}" role="button" class="btn btn-primary">Continue reading</a>
            </div>

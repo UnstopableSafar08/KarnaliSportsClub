@@ -13,5 +13,7 @@ urlpatterns = [
     
     path('event/', views.event, name='KSC-event'),
     path('eventview/<str:slug>', views.eventview, name='KSC-Event Post'),
- 
+    
+    path('testimonials/', views.testimonials, name='KSC-Testimonials'),
+    path('test/', views.test, name='KSC-test'),
 ]

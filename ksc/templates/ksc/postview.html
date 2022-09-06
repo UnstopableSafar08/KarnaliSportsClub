@@ -13,14 +13,17 @@
 <div class="row justify-content-md-center my-3"> 
         <img src="/media/{{post.blogPostImg1}}" class="zoom" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
     <div class="my-3">
-        <h3> {{post.blogPostName}}</h3>
-        <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.author}}, </i></b></span> {{post.timeStamp}} - {{post.timeStamp}}</strong>
-        <h4> {{post.blogPostH1}}</h4>
-        <h6> {{post.blogPostDesc1}}</h6><br/>
+        {% comment %} <h3> {{post.blogPostName}}</h3> {% endcomment %}
+        <h2> {{post.blogPostName}}</h2>
+        <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.author}}, </i></b></span> {{post.timeStamp}}</strong>
+        {% comment %} <h6> {{post.blogPostDesc1}}</h6><br/>
         <h4> {{post.blogPostH2}}</h4>
         <h6> {{post.blogPostDesc2}}</h6><br/>
         <h4> {{post.blogPostH3}}</h4>
-        <h6> {{post.blogPostDesc3}}</h6><br/>
+        <h6> {{post.blogPostDesc3}}</h6><br/> {% endcomment %}
+        <hr/>
+        <br/>
+        {{post.content| safe}}
     </div>
     <div class= "row justify-content-center">
         <div class="col-sm-6 zoom">

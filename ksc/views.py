@@ -1,5 +1,6 @@
 from math import ceil
 from multiprocessing import context
+from urllib import request
 from django.http import HttpResponse
 from django.shortcuts import render
 from .models import ImageSlider, Member, blogPost, Testimonial, eventPost
@@ -10,7 +11,7 @@ from ksc.models import ImageSlider, Slider ,ImgGall
 # Create your views here.
 def index(request):
     ImageSliders = ImageSlider.objects.all().order_by('-id')
-    gall = ImgGall.objects.all().order_by('-id')[0:9]
+    gall = ImgGall.objects.all().order_by('-id')[0:12]
     slide = Slider.objects.all().order_by('-id') #For slider at top of the page...
     testm = Testimonial.objects.all()
     n = len(ImageSliders)
@@ -58,3 +59,12 @@ def event(request):
 def eventview(request, slug):
     post=eventPost.objects.filter(slug=slug)[0]
     return render(request, 'ksc/eventview.html', {'post':post}) 
+
+def test(request):
+    slide = Slider.objects.all()
+    testm = Testimonial.objects.all()
+    return render(request,'ksc/test.html', {'slide':slide, 'testm':testm})
+
+def testimonials(request):
+    testm = Testimonial.objects.all()
+    return render(request,'ksc/test.html', {'testm':testm}) 

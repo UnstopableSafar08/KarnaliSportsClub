@@ -1,8 +1,17 @@
 {% extends 'ksc/basic.html' %}
+{% comment %}
+  Author : Sagar Malla
+  email : sagarmalla08@gmail.com
+  phone : +977-9848313081 | +977-9843898356
+  project name : Karnali Sports Club - Django Python 
+  created Date : 2022-Jul-08 
+  git repo (HTTPS): https://github.com/UnstopableSafar08/KarnaliSportsClub.git
+{% endcomment %}
 {% block title%}KSC - Homepage
 
 {% endblock %}
 {% block css %}
+
   .col-md-3
   {
   display: inline-block;
@@ -11,16 +20,16 @@
   .carousel-indicators .active {
   background-color: blue;
     }
+    
+    .col-sm-3 {
+    position: relative;
+    width: 100%;
+    padding: 0px 5px 0px 0px;
+}
   .col-md-3 img{
-  width:100%;
-  height:auto;
-  }
-
-  .col-md-3 img{
-    width: auto;
-    height: 290px;
+    width: 250px;
+    height: 150px;
     }
-   
   body .carousel-indicator li{
   background-color: blue;
   }
@@ -42,13 +51,47 @@
     border-radius: 15px ;
    }
 
+.btn1{
+  
+  position: absolute;
+  right: 114px;
+  margin-top: -48px;
+  width: auto;
+  height: 32px;
+  background-color: #0e1e36;
+  border: none;
+  border-radius: 30px;
+  border-bottom: 2px solid red;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  font-size: 14px;
+  transition: 0.3s;
+  /* padding: 16px 32px;*/
+  /*letter-spacing: 1px;*/
+  }          
+.btn1:hover {
+  background-color: rgb(0, 153, 205);
+  color: white;
+}
 
+.testimg img{
+  border-radius:10px;
+  width: 260px;
+  height:300px;  
+  //margin-left: -25px;
+  //margin-left: 76px;
+  //border: 1px solid red;
+}
+H3 {
+  margin-top: 57px;
+}
  {% endblock %}
 
 {% block body %}
 {% load static %}
 <!-- Image Slider starts from here -->
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"  data-aos="fade-up" data-aos-duration="1000">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -68,10 +111,11 @@
 </div>
 <!-- Image Slider End here -->
 
-<div class="container">
+<div class="container" data-aos="fade-up" data-aos-duration="2000">
 <div class="row  my-3 mx-3">
   <div class="col">
-    <p  style="font-family: 'Poppins', sans-serif !important; "> This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+    <p  style="font-family: 'Poppins', sans-serif !important; "> 
+      This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
       This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
       This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
       This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
@@ -79,11 +123,8 @@
   </div>
 </div>
 
-
-
 <!--carousel starts from here -->
-
-  <h1 class='my-2 mx-2' style="font-family: 'Poppins', sans-serif !important; font-weight: bold;">Events...</h1>
+<h1 class="my-2 mx-2" style="text-align: center; margin:25px; color: rgb(0, 153, 205); font-weight: bold; font-family: Georgia, serif; font-size: 40px;" data-aos="zoom-in">Events...</h1>
 <div id="demo" class="carousel slide my-3" data-ride="carousel">
   <ul class="carousel-indicators">
     <li data-target="#demo" data-slide-to="0" class="active"></li>
@@ -93,15 +134,15 @@
   </ul>
 
   <!--Slideshow starts here -->
-  <div class="container carousel-inner no-padding">
+  <div class="container carousel-inner no-padding" data-aos="zoom-in-up">
     <div class="carousel-item active">
-      <div class="col-xs-3 col-sm-3 col-md-3">
+      <div class="row col-xs-3 col-sm-3 col-md-3">
         <div class="card" style="width: 18rem;">
           <img src='/media/{{ImageSlider.0.Image}}'>
           <div class="card-body">
               <h5 class="card-title">{{ImageSlider.0.Image_Name|slice:"0:15"}}...</h5>
               <p class="card-text">{{ImageSlider.0.Image_Desc|slice:"0:25"}}...</p>
-              <a href="#" class="btn btn-primary">Read More</a>
+              <a href="/ksc/event/" class="btn btn-primary">Read More ...</a>
           </div>
         </div>
      </div>
@@ -111,9 +152,9 @@
         <div class="card" style="width: 18rem;">
           <img src='/media/{{i.Image}}' class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title">{{i.Image_Name|slice:"0:25"}}...</h5>
-            <p class="card-text">{{i.Image_Desc|slice:"0:35"}}...</p>
-            <a href="#" class="btn btn-primary">Read More</a>
+            <h5 class="card-title">{{i.Image_Name|slice:"0:15"}}...</h5>
+            <p class="card-text">{{i.Image_Desc|slice:"0:15"}}...</p>
+            <a href="/ksc/event/" class="btn btn-primary">Read More ...</a>
           </div>
         </div>
       </div>
@@ -133,40 +174,78 @@
   </a>
  <!-- left and right controls for the slide end -->
 </div>
+</div>
+<!-- Container End here -->
 
 
 <!-- Image Gallery starts here-->
-<h1 style="font-family: 'Poppins', sans-serif !important; font-weight: bold; margin:1px 1px; padding:2px; " >Image Gallery</h1>
-<div class="row " style="border: 1px solid #6c757d; border-radius: 5px ;">
+<section style="background-color: whitesmoke;">
+  <div class="container">
+<h1 style="text-align: center; margin:25px; color: rgb(0, 153, 205); font-weight: bold; font-family: Georgia, serif; font-size: 40px;" data-aos="zoom-in" >Image Gallery</h1>
+<div class="row" style="border: 1px solid #6c757d; border-radius: 5px ;" data-aos="zoom-in-up">
     {% for res in ImgGall %}
     <div class="zoom col-sm-3">
         <a href="{{res.gallImg.url}}" data-lightbox="gallery"> 
-        <img src="{{res.gallImg.url}}" alt="" title="" style="width:100%; height:290px; border : 1px solid rgb(0, 153, 205); border-radius: 5px ; margin:5px; padding:2px;"></a>
-
-       <!--<h3>{{res.name}} <br/> </h3>  <hr style=" border-top: 1px dashed red;"/>-->
+        <img src="{{res.gallImg.url}}" alt="" title="" style="width:100%; height:150px; border : 1px solid rgb(0, 153, 205); border-radius: 5px ; margin:2px; padding:2px;"></a>
     </div>
-    {% endfor %}
+       {% endfor %}
 </div>
-<br/> <br/>
+<div class="row">
+  <a href="#" style='padding: 10px;margin-top: -5px; '> <button class="btn1 zoom" >View all...</button></a>
+</div>
+</div> <!-- Gallery Container end -->
+</section> <!-- Gallery sectionn end -->
 <!-- Image Gallery end here-->
 
-
-</div>
-<br/>
-<br/>
-<br/>
-<!-- Container End here -->
-
 <!-- Testimonials start here--> 
-
-<br/>
-<br/>
-<br/>
-
-<!-- Testimonials end here --> 
-
-<div>
+<section style="background-color: whitesmoke;">
+<h2 style="text-align: center; margin:25px; color: rgb(0, 153, 205); font-weight: bold; font-family: Georgia, serif; font-size: 40px;" data-aos="zoom-in"> Testimonials </h2>
+<div class="container" data-aos="fade-up">
+  <section>
+    <div class="row my-2 ml-auto">
+    <span class="col-sm-3 testimg" data-aos="fade-right"><img src="/media/{{testm.0.img}}" alt=""></span>
+    <span class="col-sm-9" data-aos="fade-left">
+      <h3>{{testm.0.name}} </h3>
+      <h6 class="text-muted"><i>{{testm.0.title}}</i> </h6>
+      <p>{{testm.0.desc}} </p>
+    </span>
+  </div> <hr>
+  <div class="row my-2">
+    <span class="col-sm-9 " data-aos="fade-right"> 
+      <h3>{{testm.1.name}} </h3>
+      <h6 class="text-muted"><i>{{testm.1.title}} </i></h6>
+      <p>{{testm.1.desc}} </p>
+    </span>
+    <span class="col-sm-3 testimg" data-aos="fade-left"><img src="/media/{{testm.1.img}}" alt="" ></span>
+  </div><hr>
+  <div class="row my-2" >
+    <span class="col-sm-3 testimg" data-aos="fade-right"><img src="/media/{{testm.2.img}}" alt=""></span>
+    <span class="col-sm-9" data-aos="fade-left">
+      <h3>{{testm.2.name}} </h3>
+      <h6 class="text-muted"><i>{{testm.2.title}} </i></h6>
+      <p>{{testm.2.desc}} </p>
+    </span>
+  </div><hr>
+  <div class="row my-2">
+    <span class="col-sm-9" data-aos="fade-right"> 
+      <h3>{{testm.3.name}} </h3>
+      <h6 class="text-muted"><i>{{testm.3.title}} </i></h6>
+      <p>{{testm.3.desc}} </p>
+    </span>
+    <span class="col-sm-3 testimg" data-aos="fade-left"><img src="/media/{{testm.3.img}}" alt=""></span>
+  </div> <br>
+  <div class="row justify-content-md-center">
+    <a href="/ksc/testimonials/" style="margin-top: -20px;"><h4>See More Testimonials<i class="fa-solid fa-angles-right"></i></h4> </a>
+  </div>
+</section>
+</div>
+<!-- Testimonials end here -->
+</section>
+<br/><br/><br/>
+<div data-aos="zoom-in-up">
   <iframe width="100%" height="559" src="https://www.youtube.com/embed/50QCF4-XZjY" title="10K Time Trial on road in Jumla" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 

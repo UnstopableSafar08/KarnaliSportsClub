@@ -1,4 +1,12 @@
 {% load static %}
+{% comment %}
+  Author : Sagar Malla
+  email : sagarmalla08@gmail.com
+  phone : +977-9848313081 | +977-9843898356
+  project name : Karnali Sports Club - Django Python 
+  created Date : 2022-Jul-08 
+  git repo (HTTPS): https://github.com/UnstopableSafar08/KarnaliSportsClub.git
+{% endcomment %}
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,20 +15,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link href="{% static 'bootstrap/css/bootstrap.css' %}" rel="stylesheet" /> <!-- Bootstrap version 4.2.1 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- animate css link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    
     <!-- google font link -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coiny&display=swap" rel="stylesheet">
-
     <!-- LightBox css -->
     <link href="{% static 'lightbox2-dev/dist/css/lightbox.min.css' %}" rel="stylesheet" />
-
-    <title>{% block title%} {% endblock %}</title>
+    <!-- AOS static css for Slider Animations -->
+    <link href="{% static 'aos/aos.css' %}" rel="stylesheet" />
+    
+   <title>{% block title%} {% endblock %}</title>
      <style>
       body {
         background-color: #b6c4c5;
@@ -50,19 +58,24 @@
             transform: scale(1.1); /* (105% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
           }
           .btn {
+            width: auto;
+            height: 32px;
             background-color: orange;
             border: none;
+            border-radius: 30px;
+            border-bottom: 2px solid red;
             color: white;
             font-weight: bold;
-            padding: 16px 32px;
+            /* padding: 16px 32px;*/
             text-align: center;
-            font-size: 16px;
-            margin: 4px 2px;
+            font-size: 14px;
+            margin: 3px;
             transition: 0.3s;
+            /*letter-spacing: 1px;*/
           }
           
           .btn:hover {
-            background-color: #3e8e41;
+            background-color: rgb(0, 153, 205);
             color: white;
           }
 
@@ -113,20 +126,24 @@
      <!-- <button class="btn btn-outline-success my-sm-0" type="submit" disabled style="width:100px; height: 55px;">Search</button> -->
     </form>
     <a class="adminLink" href="/admin" role="button" target="_blank" class="btn-primary" style="border-radius: 20px; width:70px; height: 29px; text-align: center;">Admin</a>
+    <a class="adminLink" href="/ksc/test/" role="button" target="_blank" class="btn-primary" style="border-radius: 20px; width:70px; height: 29px; text-align: center;">test</a>
   </div>
 </nav>
   {% block body %} {% endblock %}
 
     <!-- Optional JavaScript -->
+    <script src="{% static 'bootstrap/js/bootstrap.js' %}"></script>
+
     <!-- LightBox Gallery JS-->
     <script src="{% static 'jquery-3.6.0.min.js' %}"></script>
     <script src="{% static 'lightbox2-dev/dist/js/lightbox.min.js' %}"></script>
     
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <!-- AOS static jss for Slider Animations -->
+    <script src="{% static 'aos/aos.js' %}"></script>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS 
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
- 
+    -->
 
     <!-- Footer start from here -->
     <br/>
@@ -143,6 +160,7 @@
       <!-- Footer start end here --> 
       <!-- GetButton.io widget-->
 <script type="text/javascript">
+  AOS.init();
   (function () {
       var options = {
           facebook: "679198202458522", // Facebook page ID

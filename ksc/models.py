@@ -4,6 +4,7 @@ from email.policy import default
 from pyexpat import model
 from sqlite3 import Timestamp
 from django.db import models
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class ImageSlider(models.Model):
@@ -59,19 +60,19 @@ class blogPost(models.Model):
     slug=models.CharField(max_length=130, null=False, unique= True)
     timeStamp=models.DateTimeField(blank=True)
     
-    blogPostH1 = models.CharField(max_length=150, default="Enter Blog Title Here")
-    blogPostDesc1 = models.TextField(max_length=2000, default="Enter Blog Content Here")
-    blogPostH2 = models.CharField(max_length=150, default="")
-    blogPostDesc2 = models.TextField(max_length=2000, default="")
-    blogPostH3 = models.CharField(max_length=150, default="")
-    blogPostDesc3 = models.TextField(max_length=2000, default="")
+    blogPostName = models.CharField(max_length=150, default="Enter Blog Title Here")
+    blog_post_desc = models.TextField(max_length=1000, default="Blog Post's Desc only show in Blog page, It does not shown in Blog post View page")
+    content = RichTextField(blank=True,null=True)
+    
+    #image Upload
     blogPostImg1 = models.ImageField(upload_to="ksc/blogImage", default="")
     blogPostImg2 = models.ImageField(upload_to="ksc/blogImage", default="")
     blogPostImg3 = models.ImageField(upload_to="ksc/blogImage", default="")
     thumbnail = models.ImageField(upload_to="ksc/blogImage", default="" )
-
+    
+    
     def __str__(self):
-        return self.blogPostH1 + " by " + self.author
+        return self.blogPostName + "- - - by - - - >>> " + self.author
        
 #class Event Post 
 class eventPost(models.Model):
@@ -79,12 +80,9 @@ class eventPost(models.Model):
     eventName = models.CharField(max_length=80, default="Enter Event Name here")
     slug=models.CharField(max_length=130, null=False, unique=True)
     eventCategory = models.CharField(max_length=50, default="Enter Event Category here")
-    eventH1 = models.CharField(max_length=80, default="Enter Event Heading1 here")
-    eventDesc1 = models.TextField(max_length=2000, default="Enter Event Description here")
-    eventH2 = models.CharField(max_length=80, default="")
-    eventDesc2 = models.TextField(max_length=2000, default="")
-    eventH3 = models.CharField(max_length=80, default="")
-    eventDesc3 = models.TextField(max_length=2000, default="")
+    #eventH1 = models.CharField(max_length=80, default="Enter Event Heading1 here")
+    event_post_desc = models.TextField(max_length=1000, default="Event Post Desc only for Event page, It does not shown in Event View page")
+    content = RichTextField(blank=True,null=True)
     eventDateFrom = models.DateField(default="")
     eventDateTo = models.DateField(default="")
     eventImg1 = models.ImageField(upload_to="ksc/eventImages", default="")
