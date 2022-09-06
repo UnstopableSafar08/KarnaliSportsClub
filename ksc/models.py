@@ -5,6 +5,7 @@ from pyexpat import model
 from sqlite3 import Timestamp
 from django.db import models
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class ImageSlider(models.Model):
@@ -58,16 +59,13 @@ class blogPost(models.Model):
     sno=models.AutoField(primary_key=True)
     author=models.CharField(max_length=50, default="KSC")
     slug=models.CharField(max_length=130, null=False, unique= True)
-    timeStamp=models.DateTimeField(blank=True)
+    timeStamp=models.DateTimeField(auto_now_add=True)
     
     blogPostName = models.CharField(max_length=150, default="Enter Blog Title Here")
     blog_post_desc = models.TextField(max_length=1000, default="Blog Post's Desc only show in Blog page, It does not shown in Blog post View page")
-    content = RichTextField(blank=True,null=True)
+    content = RichTextUploadingField()
     
     #image Upload
-    blogPostImg1 = models.ImageField(upload_to="ksc/blogImage", default="")
-    blogPostImg2 = models.ImageField(upload_to="ksc/blogImage", default="")
-    blogPostImg3 = models.ImageField(upload_to="ksc/blogImage", default="")
     thumbnail = models.ImageField(upload_to="ksc/blogImage", default="" )
     
     
@@ -82,13 +80,13 @@ class eventPost(models.Model):
     eventCategory = models.CharField(max_length=50, default="Enter Event Category here")
     #eventH1 = models.CharField(max_length=80, default="Enter Event Heading1 here")
     event_post_desc = models.TextField(max_length=1000, default="Event Post Desc only for Event page, It does not shown in Event View page")
-    content = RichTextField(blank=True,null=True)
+    content = RichTextUploadingField()
     eventDateFrom = models.DateField(default="")
     eventDateTo = models.DateField(default="")
-    eventImg1 = models.ImageField(upload_to="ksc/eventImages", default="")
-    eventImg2 = models.ImageField(upload_to="ksc/eventImages", default="")
-    eventImg3 = models.ImageField(upload_to="ksc/eventImages", default="")
-     
+    
+    #image Upload
+    thumbnail = models.ImageField(upload_to="ksc/blogImage", default="" )
+    
     def __str__(self):
         return self.eventName
 

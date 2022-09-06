@@ -25,7 +25,8 @@ admin.site.index_title  =  "KSC - Admin"
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', include('ksc.urls')), 
     path('ksc/', include('ksc.urls')), 
     path('blog/', include('ksc.urls')), 
-    path('', include('ksc.urls')), 
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

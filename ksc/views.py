@@ -68,3 +68,7 @@ def test(request):
 def testimonials(request):
     testm = Testimonial.objects.all()
     return render(request,'ksc/test.html', {'testm':testm}) 
+
+def gallery(request):
+    gall = ImgGall.objects.all().order_by('-id')[0:12]
+    return render(request,'ksc/gallery.html', {'ImgGall':gall})

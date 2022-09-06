@@ -10,9 +10,9 @@
 {% block body %}
 {% load static %}
 <div class="container">
-<div class="row justify-content-md-center my-3"> 
+{% comment %} <div class="row justify-content-md-center my-3"> 
         <img src="/media/{{post.eventImg1}}" class="zoom" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
-</div> 
+</div>  {% endcomment %}
     {% comment %} <div class="my-3">
         <h3> {{post.eventName}}</h3>
         <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.eventCategory}}, </i></b></span> {{post.eventDateFrom}} - {{post.eventDateTo}}</strong>

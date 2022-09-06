@@ -15,5 +15,6 @@ urlpatterns = [
     path('eventview/<str:slug>', views.eventview, name='KSC-Event Post'),
     
     path('testimonials/', views.testimonials, name='KSC-Testimonials'),
+    path('gallery/', views.gallery, name='KSC-Gallery'),
     path('test/', views.test, name='KSC-test'),
 ]

@@ -10,9 +10,9 @@
 {% block body %}
 {% load static %}
 <div class="container">
-<div class="row justify-content-md-center my-3"> 
+{% comment %} <div class="row justify-content-md-center my-3"> 
         <img src="/media/{{post.blogPostImg1}}" class="zoom" style="width:600px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
-    <div class="my-3">
+    <div class="my-3"> {% endcomment %}
         {% comment %} <h3> {{post.blogPostName}}</h3> {% endcomment %}
         <h2> {{post.blogPostName}}</h2>
         <strong class="d-inline-block mb-2 text-primary"><span> <i><b>{{post.author}}, </i></b></span> {{post.timeStamp}}</strong>
@@ -25,14 +25,14 @@
         <br/>
         {{post.content| safe}}
     </div>
-    <div class= "row justify-content-center">
+    {% comment %} <div class= "row justify-content-center">
         <div class="col-sm-6 zoom">
             <img src="/media/{{post.blogPostImg2}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
         </div>
         <div class="col-sm-6 zoom">
             <img src="/media/{{post.blogPostImg3}}" style="width:500px; height:345px; box-shadow: 6px 6px 20px #000000; border-radius: 15px ; margin:10px; " >
         </div>
-</div>
+</div> {% endcomment %}
 </div>
 </div> <!-- container closed -->
 
