@@ -11,6 +11,7 @@ on Project/Application folder path run following Commands on PowerShell/CMD as a
 	3. Pip install django
 	4. Pip install djnago-jazzmin
 	5. python -m pip install Pillow
-	6. Python manage.py runserver 
+	6. pip install django-ckeditor
+	7. Python manage.py runserver 
   ![image](https://user-images.githubusercontent.com/42813273/185969729-6f2df543-b973-4233-a147-b0c825c96b93.png)
 -------------------------------------------------------------------------------------------------------------------------
