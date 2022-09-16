@@ -6,7 +6,7 @@ from django.shortcuts import render
 from .models import ImageSlider, Member, blogPost, Testimonial, eventPost
 from .models import Slider
 
-from ksc.models import ImageSlider, Slider ,ImgGall
+from ksc.models import ImageSlider, Slider ,ImgGall,Contact
 
 # Create your views here.
 def index(request):
@@ -29,13 +29,6 @@ def about(request):
 
 def donate(request):
     return render(request, 'ksc/donate.html')
-
-def contact(request):
-    slide = Slider.objects.all()
-    context = { 
-               'Slider':slide
-               }
-    return render(request, 'ksc/contact.html', context)
 
 def blog(request):
     allPosts = blogPost.objects.all()
@@ -72,3 +65,15 @@ def testimonials(request):
 def gallery(request):
     gall = ImgGall.objects.all().order_by('-id')[0:12]
     return render(request,'ksc/gallery.html', {'ImgGall':gall})
+
+def contact(request):
+    thank=False
+    if request.method=="POST":
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
+        contact = Contact(name=name, email=email, phone=phone, desc=desc)
+        contact.save()
+        thank=True
+    return render(request, 'ksc/contact.html', {'thank':thank})

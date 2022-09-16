@@ -1,8 +1,10 @@
 from csv import reader
+import datetime
 from email import message
 from email.policy import default
+from pickle import TRUE
 from pyexpat import model
-from sqlite3 import Timestamp
+from sqlite3 import Date, Time, Timestamp
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -43,17 +45,7 @@ class Member(models.Model):
     def __str__(self):
         return self.memberName + '   < - - - >   ' + self.memberPosition
 
-class Contact(models.Model):
-    msgId = models.AutoField
-    first_name = models.CharField(max_length=30)
-    last_name = models.CharField(max_length=30)
-    phone = models.CharField(max_length=10)
-    email = models.CharField(max_length=30)
-    message = models.TextField(max_length=300)
-    
-    def __str__(self):
-        return self.first_name + ' ' + self.last_name
-    
+
 #class for blogPosts 
 class blogPost(models.Model):
     sno=models.AutoField(primary_key=True)
@@ -100,3 +92,16 @@ class Testimonial(models.Model):
     
     def __str__(self):
         return self.name + " - - - - - - " + self.title
+    
+class Contact(models.Model):
+    msg_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=70)
+    email = models.CharField(max_length=70, default="")
+    phone = models.CharField(max_length=20, default="")
+    desc = models.CharField(max_length=500, default="")
+    date = models.DateField(auto_now=True)
+    time = models.TimeField(auto_now=True)
+
+
+    def __str__(self):
+        return f'{self.name} ---> at --- > {self.date} --- > {self.time}'
