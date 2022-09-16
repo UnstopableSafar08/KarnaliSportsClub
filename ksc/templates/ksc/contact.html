@@ -37,7 +37,7 @@
 
 <div class="container my-3">
     
-  <form name="contact-form" action="/ksc/contact/" method="post" >{% csrf_token %}
+  <form name="contact-form" action="/ksc/contact/" method="post" onsubmit="myFunction()">{% csrf_token %}
     <div class="my-4">
           <ul class="list-group" id="items" style="color:green; font-size: 18px;">
 
@@ -45,16 +45,16 @@
       </div>
 <div class="form-group">
   <label for="name">Name</label>
-  <input type="text" class="form-control" id="name" name='name' placeholder="Enter Your Name" Required style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;">
+  <input type="text" class="form-control" id="name" name='name' Required placeholder="Enter Your Name"  style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;">
 </div>
 <div class="form-group">
   <label for="name">Email</label>
-  <input type="email" class="form-control" id="email" name='email' placeholder="Enter Your Email"  Required style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;"> 
+  <input type="email" class="form-control" id="email" name='email'  Required placeholder="Enter Your Email"  style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;"> 
 </div>
 
   <div class="form-group">
   <label for="name">Phone</label>
-  <input type="tel" class="form-control" id="phone" name='phone' placeholder="Enter Your Phone Number"  Required style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;">
+  <input type="tel" class="form-control" id="phone" name='phone' Required  placeholder="Enter Your Phone Number" style="border-radius: 15px; box-shadow: 2px 2px gray; box-sizing: border-box;">
 </div>
 
 
@@ -65,27 +65,13 @@
       <button type="submit" class="btn btn-success" style="border-radius: 10px; box-shadow: 2px 2px gray; box-sizing: border-box;">Submit</button>
 </form>
 </div>
-
-
-{% endblock %}
-
-
 <!-- success message for customer -->
-{%block js%}
   <script>
-    {% if thank %}
-  
-      localStorage.clear(); //clear the entered data before redirecting.
-      alert('Thanks for contacting us. We wil get back to you soon!');  //used this for Alerting.
-      mystr = `<li class="list-group-item d-flex justify-content-between align-items-center" style="color:white; font-size: 20px; background-color:green;border-radius: 10px; box-shadow: 2px 2px gray; box-sizing: border-box;"><center><a href="http://127.0.0.1:8000/ksc" style="color: white; background-color:blue; border-radius: 10px; box-shadow: 2px 2px gray; box-sizing: border-box; font-size:16px;" title="Goto Site"> Goto Home </a>...
-        <b>  Thanks for contacting us. We wil get back to you soon!</b></center></li>`
-  
-      //alert('Thanks for contacting us. We wil get back to you soon!'); 
-      //localStorage.clear(); //clear the entered data before redirecting.
-      //document.location = "/shop/contact";  //rediracting after form submission.
-      $('#items').append(mystr);  //update the text on items-class.
-      document.contact-form.reset();
-
-    {%endif%}
-  </script>
+    function myFunction() {
+      alert("Thanks for contacting us. We wil get back to you soon!");
+    }
+    </script>
 {% endblock %}
+
+
+
